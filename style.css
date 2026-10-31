@@ -1,0 +1,26 @@
+/* 
+         * LÓGICA DE NAVEGAÇÃO APENAS COM CSS 
+         */
+        
+        /* Esconde todas as telas por padrão */
+        .tela { 
+            display: none; 
+        }
+
+        /* Se o radio correspondente estiver marcado, exibe a tela (como block ou flex) */
+        #radio-inicio:checked ~ main #inicio { display: flex; }
+        #radio-mapa:checked ~ main #mapa { display: block; }
+        #radio-detalhes:checked ~ main #detalhes { display: block; }
+        #radio-sobre:checked ~ main #sobre { display: block; }
+
+        /* Estiliza o link do menu ativo para dar feedback visual */
+        #radio-inicio:checked ~ nav label[for="radio-inicio"],
+        #radio-mapa:checked ~ nav label[for="radio-mapa"],
+        #radio-detalhes:checked ~ nav label[for="radio-detalhes"],
+        #radio-sobre:checked ~ nav label[for="radio-sobre"] {
+            color: #a7f3d0; /* Cor verde clara do Tailwind */
+            border-bottom: 2px solid #a7f3d0;
+        }
+
+        /* Ajuste de altura para o iframe do mapa */
+        .mapa-container { height: calc(100vh - 64px); }

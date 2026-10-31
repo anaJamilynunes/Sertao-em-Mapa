@@ -2,20 +2,128 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Sertão em Mapa</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertão em Mapa - Somente HTML/CSS</title>
     
-    <!-- CABEÇALHO E NAVEGAÇÃO -->
-    <header>
-        <h1>Sertão em Mapa</h1>
-        <nav>
-            <button>Acompanhar Obras</button>
-            <button>Nova Ocorrência</button>
-            <button>Entrar</button>
-        </nav>
-    </header>
+    <!-- Tailwind CSS (Apenas para estilos, sem scripts de comportamento) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen m-0 overflow-x-hidden">
+
+    <!-- BOTÕES DE RÁDIO OCULTOS (O "Cérebro" da navegação CSS) -->
+    <input type="radio" name="navegacao" id="radio-inicio" checked class="hidden">
+    <input type="radio" name="navegacao" id="radio-mapa" class="hidden">
+    <input type="radio" name="navegacao" id="radio-detalhes" class="hidden">
+    <input type="radio" name="navegacao" id="radio-sobre" class="hidden">
+
+    <!-- NAVBAR -->
+    <nav class="bg-emerald-700 text-white shadow-md h-16 flex items-center justify-between px-6 z-50 sticky top-0">
+        <!-- O título também serve de link para o início através da tag label -->
+        <label for="radio-inicio" class="font-bold text-xl cursor-pointer">
+            🌵 Sertão em Mapa
+        </label>
+        
+        <ul class="flex space-x-6 text-sm font-medium">
+            <!-- Labels funcionam como botões que marcam os radios ocultos -->
+            <li><label for="radio-inicio" class="cursor-pointer pb-1 hover:text-emerald-200 transition-colors">Início</label></li>
+            <li><label for="radio-mapa" class="cursor-pointer pb-1 hover:text-emerald-200 transition-colors">Mapa</label></li>
+            <li><label for="radio-detalhes" class="cursor-pointer pb-1 hover:text-emerald-200 transition-colors">Detalhes</label></li>
+            <li><label for="radio-sobre" class="cursor-pointer pb-1 hover:text-emerald-200 transition-colors">Sobre</label></li>
+        </ul>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="flex-grow w-full">
+
+        <!-- 1. TELA: INÍCIO -->
+        <section id="inicio" class="tela h-[calc(100vh-64px)] items-center justify-center bg-emerald-50">
+            <div class="text-center max-w-2xl px-6 py-12">
+                <h1 class="text-4xl font-extrabold text-emerald-900 mb-4">Descubra o Sertão</h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Explore os pontos históricos, culturais e geográficos de Quixadá e do Sertão Central em uma interface puramente construída com HTML e CSS.
+                </p>
+                <!-- Botão que direciona para o mapa ativando o label -->
+                <label for="radio-mapa" class="cursor-pointer inline-block bg-emerald-600 text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-emerald-700 transition-all">
+                    Acessar o Mapa Estático
+                </label>
+            </div>
+        </section>
+
+        <!-- 2. TELA: MAPA -->
+        <section id="mapa" class="tela mapa-container w-full relative">
+            <!-- Como não podemos usar Leaflet.js, usamos um iframe do OpenStreetMap puramente HTML -->
+            <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0" 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-39.0600%2C-4.9900%2C-38.9700%2C-4.9400&amp;layer=mapnik&amp;marker=-4.9701%2C-39.0152">
+            </iframe>
+            <!-- Dica visual flutuante indicando para ir aos detalhes (já que não há JS para clicar no marcador) -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white px-6 py-3 rounded-full shadow-xl border border-emerald-100 flex items-center gap-4">
+                <span class="text-sm font-medium text-gray-700">Explorou a região?</span>
+                <label for="radio-detalhes" class="cursor-pointer bg-emerald-600 text-white text-sm px-4 py-1.5 rounded-full hover:bg-emerald-700 transition-colors">
+                    Ver Exemplo de Detalhes
+                </label>
+            </div>
+        </section>
+
+        <!-- 3. TELA: DETALHES -->
+        <!-- Sem JS, o conteúdo de detalhes precisa ser estático. Vamos usar a UFC como exemplo base. -->
+        <section id="detalhes" class="tela py-12 px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:shrink-0 bg-emerald-100 md:w-64 h-48 md:h-auto flex items-center justify-center">
+                        <span class="text-5xl">🎓</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-emerald-600 font-semibold">Educação / Tecnologia</div>
+                        <h2 class="block mt-1 text-2xl leading-tight font-bold text-black">
+                            UFC - Campus Quixadá
+                        </h2>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            Um importante polo de tecnologia no Sertão Central. O campus é referência na formação de profissionais em áreas de TI, incluindo os cursos de <strong>Redes de Computadores</strong>, Engenharia de Software, Sistemas de Informação, entre outros. 
+                        </p>
+                        <p class="mt-2 text-gray-500 text-sm italic">
+                            (Nota: Esta é uma tela estática. Em uma versão com backend/JS, os dados mudariam conforme o clique no mapa).
+                        </p>
+                        <div class="mt-6">
+                            <label for="radio-mapa" class="cursor-pointer text-emerald-600 hover:text-emerald-800 font-semibold text-sm">
+                                &larr; Voltar ao Mapa
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TELA: SOBRE -->
+        <section id="sobre" class="tela py-12 px-6">
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                <h2 class="text-3xl font-bold text-emerald-900 mb-6">Sobre o Projeto Front-End</h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Este layout foi construído com uma restrição técnica interessante: <strong>não utilizar JavaScript</strong>. 
+                </p>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    A navegação no estilo Single Page Application (SPA) foi recriada usando o truque dos botões de rádio ocultos no HTML. A tag <code>&lt;label&gt;</code> controla o estado da página, e o seletor irmão (<code>~</code>) no CSS cuida da exibição das telas.
+                </p>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4">
+                    <h3 class="font-bold text-emerald-800">Recursos Desta Versão:</h3>
+                    <ul class="list-disc list-inside mt-2 text-emerald-700">
+                        <li>HTML5 Semântico (`nav`, `section`, `main`)</li>
+                        <li>Estilização completa via Tailwind CSS</li>
+                        <li>Iframe do OpenStreetMap centrado em Quixadá</li>
+                        <li>Navegação baseada em pseudo-classes CSS (`:checked`)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
