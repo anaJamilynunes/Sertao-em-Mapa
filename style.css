@@ -1,26 +1,16 @@
-/* 
-         * LÓGICA DE NAVEGAÇÃO APENAS COM CSS 
-         */
-        
-        /* Esconde todas as telas por padrão */
-        .tela { 
-            display: none; 
-        }
+﻿body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; background: #faf9f5; color: #333; }
+    nav { background: #2c3e50; padding: 15px; text-align: center; }
+    button { margin: 0 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #ecf0f1; cursor: pointer; font-weight: bold; }
+    button:hover { background: #bdc3c7; }
+    
+    .tela { display: none; padding: 40px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
+    .tela.ativa { display: block; }
 
-        /* Se o radio correspondente estiver marcado, exibe a tela (como block ou flex) */
-        #radio-inicio:checked ~ main #inicio { display: flex; }
-        #radio-mapa:checked ~ main #mapa { display: block; }
-        #radio-detalhes:checked ~ main #detalhes { display: block; }
-        #radio-sobre:checked ~ main #sobre { display: block; }
-
-        /* Estiliza o link do menu ativo para dar feedback visual */
-        #radio-inicio:checked ~ nav label[for="radio-inicio"],
-        #radio-mapa:checked ~ nav label[for="radio-mapa"],
-        #radio-detalhes:checked ~ nav label[for="radio-detalhes"],
-        #radio-sobre:checked ~ nav label[for="radio-sobre"] {
-            color: #a7f3d0; /* Cor verde clara do Tailwind */
-            border-bottom: 2px solid #a7f3d0;
-        }
-
-        /* Ajuste de altura para o iframe do mapa */
-        .mapa-container { height: calc(100vh - 64px); }
+    #mapa-container { 
+      height: 500px; 
+      width: 100%; 
+      border-radius: 8px; 
+      margin-top: 20px;
+      border: 2px solid #ddd;
+      z-index: 1; 
+    }
