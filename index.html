@@ -23,7 +23,19 @@
 
   <section id="tela-mapa" class="tela">
     <h2>Explorar Mapa do Sertão</h2>
-    <div id="mapa-container"></div>
+    
+    <div class="controles-zoom">
+      <button onclick="alterarZoom(20)">+ Mais Zoom</button>
+      <button onclick="alterarZoom(-20)">- Menos Zoom</button>
+    </div>
+
+    <!-- O container agora usa classes do CSS para manter as bordas perfeitas -->
+    <div id="mapa-container" class="mapa-scroll">
+      <div id="mapa-conteudo" onclick="registrarOcorrencia(event)">
+        <!-- Atualizado para map.jpg -->
+        <img src="assets/map.png" alt="Mapa de Quixadá">
+      </div>
+    </div>
   </section>
 
   <section id="tela-detalhes" class="tela">
@@ -36,5 +48,54 @@
     <p>Informações sobre a iniciativa Sertão em Mapa.</p>
   </section>
 
+  <script>
+    function navegar(idTela) {
+      // 1. Remove a classe 'ativa' de todas as seções
+      const telas = document.querySelectorAll('.tela');
+      telas.forEach(tela => tela.classList.remove('ativa'));
+      
+      // 2. Adiciona a classe 'ativa' apenas na tela clicada
+      document.getElementById(idTela).classList.add('ativa');
+    }
+    let zoomAtual = 100;
+
+    function alterarZoom(valor) {
+      zoomAtual += valor;
+      // Impede que o mapa fique menor que o tamanho original do container
+      if (zoomAtual < 100) zoomAtual = 100; 
+      
+      // Aplica a nova largura (ex: 120%, 150%)
+      document.getElementById('mapa-conteudo').style.width = zoomAtual + '%';
+    }
+
+    function registrarOcorrencia(event) {
+      let titulo = prompt("Qual é a ocorrência neste local? (Ex: Buraco, Acidente)");
+      
+      if (titulo) {
+        let descricao = prompt("Digite uma descrição detalhada para essa ocorrência:");
+        
+        let retangulo = event.currentTarget.getBoundingClientRect();
+        
+        // Pega a posição em pixels baseada no tamanho atual da imagem
+        let xPx = event.clientX - retangulo.left;
+        let yPx = event.clientY - retangulo.top;
+
+        // Converte os pixels para porcentagem (%)
+        let xPorcento = (xPx / retangulo.width) * 100;
+        let yPorcento = (yPx / retangulo.height) * 100;
+
+        // Cria a bolinha usando left e top em % para ela grudar no mapa mesmo com o zoom
+        let bolinhaHTML = `
+          <div 
+            style="position: absolute; left: ${xPorcento}%; top: ${yPorcento}%; width: 16px; height: 16px; background: red; border-radius: 50%; transform: translate(-50%, -50%); border: 2px solid white; cursor: pointer;" 
+            title="${titulo}"
+            onclick="event.stopPropagation(); alert('🔴 OCORRÊNCIA:\\n' + '${titulo}' + '\\n\\n📝 DESCRIÇÃO:\\n' + '${descricao}');"
+          ></div>
+        `;
+
+        event.currentTarget.insertAdjacentHTML('beforeend', bolinhaHTML);
+      }
+    }
+  </script>
 </body>
 </html>
