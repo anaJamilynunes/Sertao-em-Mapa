@@ -1,101 +1,10 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sertão em Mapa - Etapa 1</title>
-  
-  <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="0; url=pages/home.html">
+    <title>Redirecionando...</title>
 </head>
 <body>
-
-  <nav>
-    <button onclick="navegar('tela-inicio')">Início</button>
-    <button onclick="navegar('tela-mapa')">Mapa</button>
-    <button onclick="navegar('tela-detalhes')">Detalhes</button>
-    <button onclick="navegar('tela-sobre')">Sobre</button>
-  </nav>
-
-  <section id="tela-inicio" class="tela ativa">
-    <h2>Bem-vindo ao Sertão em Mapa</h2>
-    <p>Navegue pelo menu acima para explorar a região.</p>
-  </section>
-
-  <section id="tela-mapa" class="tela">
-    <h2>Explorar Mapa do Sertão</h2>
-    
-    <div class="controles-zoom">
-      <button onclick="alterarZoom(20)">+ Mais Zoom</button>
-      <button onclick="alterarZoom(-20)">- Menos Zoom</button>
-    </div>
-
-    <!-- O container agora usa classes do CSS para manter as bordas perfeitas -->
-    <div id="mapa-container" class="mapa-scroll">
-      <div id="mapa-conteudo" onclick="registrarOcorrencia(event)">
-        <!-- Atualizado para map.jpg -->
-        <img src="assets/map.png" alt="Mapa de Quixadá">
-      </div>
-    </div>
-  </section>
-
-  <section id="tela-detalhes" class="tela">
-    <h2>Detalhes da Região</h2>
-    <p>Selecione um ponto no mapa para ver mais informações aqui.</p>
-  </section>
-
-  <section id="tela-sobre" class="tela">
-    <h2>Sobre o Projeto</h2>
-    <p>Informações sobre a iniciativa Sertão em Mapa.</p>
-  </section>
-
-  <script>
-    function navegar(idTela) {
-      // 1. Remove a classe 'ativa' de todas as seções
-      const telas = document.querySelectorAll('.tela');
-      telas.forEach(tela => tela.classList.remove('ativa'));
-      
-      // 2. Adiciona a classe 'ativa' apenas na tela clicada
-      document.getElementById(idTela).classList.add('ativa');
-    }
-    let zoomAtual = 100;
-
-    function alterarZoom(valor) {
-      zoomAtual += valor;
-      // Impede que o mapa fique menor que o tamanho original do container
-      if (zoomAtual < 100) zoomAtual = 100; 
-      
-      // Aplica a nova largura (ex: 120%, 150%)
-      document.getElementById('mapa-conteudo').style.width = zoomAtual + '%';
-    }
-
-    function registrarOcorrencia(event) {
-      let titulo = prompt("Qual é a ocorrência neste local? (Ex: Buraco, Acidente)");
-      
-      if (titulo) {
-        let descricao = prompt("Digite uma descrição detalhada para essa ocorrência:");
-        
-        let retangulo = event.currentTarget.getBoundingClientRect();
-        
-        // Pega a posição em pixels baseada no tamanho atual da imagem
-        let xPx = event.clientX - retangulo.left;
-        let yPx = event.clientY - retangulo.top;
-
-        // Converte os pixels para porcentagem (%)
-        let xPorcento = (xPx / retangulo.width) * 100;
-        let yPorcento = (yPx / retangulo.height) * 100;
-
-        // Cria a bolinha usando left e top em % para ela grudar no mapa mesmo com o zoom
-        let bolinhaHTML = `
-          <div 
-            style="position: absolute; left: ${xPorcento}%; top: ${yPorcento}%; width: 16px; height: 16px; background: red; border-radius: 50%; transform: translate(-50%, -50%); border: 2px solid white; cursor: pointer;" 
-            title="${titulo}"
-            onclick="event.stopPropagation(); alert('🔴 OCORRÊNCIA:\\n' + '${titulo}' + '\\n\\n📝 DESCRIÇÃO:\\n' + '${descricao}');"
-          ></div>
-        `;
-
-        event.currentTarget.insertAdjacentHTML('beforeend', bolinhaHTML);
-      }
-    }
-  </script>
+    <p>se tu não foi redirectionado <a href="pages/home.html">aperte agui</a>!</p>
 </body>
 </html>
