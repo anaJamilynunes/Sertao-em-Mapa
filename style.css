@@ -30,10 +30,40 @@ button:hover {
 }
 
 .conteudo-pagina { 
+  font-size: 1.2em;
   padding: 40px 20px; 
   text-align: center; 
   max-width: 800px; 
   margin: 0 auto; 
+}
+
+.tamanho-subtitulo {
+  font-size: 1.1rem;
+  text-align: left;
+  margin-bottom: 2px;
+  margin-left: 7px;
+  text-decoration: underline;
+  color:#2c3e50
+}
+.lista-alinhada {
+  font-size: 1.1em;
+  text-align: left;
+  list-style-position: inside;
+  padding-left: 0;
+  margin-bottom: 2px;
+  color:#2c3e50
+}
+.tamanho-texto {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+  text-align: justify;
+  color:#333
+}
+.caixa-com-moldura {
+  border: 4px solid orange; 
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 5px;
 }
 
 #mapa-container { 
