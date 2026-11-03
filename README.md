@@ -28,6 +28,7 @@ Link do documento com todas as perguntas referentes a entrevista: https://docs.g
 Link do formulário criado com algumas perguntas: https://docs.google.com/forms/d/e/1FAIpQLSerCcTgarWp8YWpYhplpcjB3TeU4A98qId76UzrIl_oeK4WIA/viewform?usp=header
 
 - Também foram realizadas perguntas acerca da plataforma, elas consistiam em:
+
     ● Se existisse um aplicativo/plataforma nacional ou regional onde você pudesse
 apontar no mapa o problema da sua rua, anexar foto e ver se outros vizinhos
 relataram o mesmo problema, você usaria?
@@ -48,10 +49,9 @@ interativo com os limites dos bairros de Quixadá e as ocorrências geolocalizad
 - 4. RF04 - Camadas de Mapas Sobrepostas: O sistema deve permitir que o usuário
 sobreponha diferentes camadas no mapa (ex: densidade demográfica, áreas de
 risco de alagamento) para cruzamento de dados.
-- 5. Cadastro de ocorrência: Permite que o usuário ajude a mapear problemas urbanos
+- 5. RF06 - Cadastro de ocorrência: Permite que o usuário ajude a mapear problemas urbanos
 por meio de ocorrências na plataforma de forma anônima. Ex: área de lixo
-acumulado, área perigosa, etc.
-informando categoria, descrição textual, anexando foto e capturando a
+acumulado, área perigosa, etc. Informando categoria, descrição textual, anexando foto e capturando a
 geolocalização.
 
 5. BENEFÍCIOS DA APLICAÇÃO:
