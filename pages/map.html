@@ -11,15 +11,36 @@
   <nav>
     <a href="home.html"><button>Início</button></a>
     <a href="map.html"><button>Mapa</button></a>
-    <a href="details.html"><button>Detalhes</button></a>
     <a href="about.html"><button>Sobre</button></a>
   </nav>
 
   <main class="conteudo-pagina">
-    <h2>Explorar Mapa do Sertão</h2>
+    <h2>Marque a ocorrência no mapa ou digite o endereço</h2>
+
+    <div class="barra-pesquisa">
+      <input type ="text" id="campo-endereco" placeholder="Ex: Av.José de Freitas Queiroz, Cedro">
+      <button id="btn-buscar" onclick="buscarEndereco()">Buscar</button>
+    </div>
+    
+    <div class="area-mapa">
+  <aside id="painel-detalhes">
+  <h3>Detalhes da ocorrência</h3>
+
+  <div id="detalhes-conteudo">
+    <h4 id="det-titulo">Arco histórico destruído</h4>
+    <p id="det-descricao">Um caminhão com caçamba atingiu e derrubou o arco histórico de acesso ao Açude Cedro. Ninguém ficou ferido. A estrutura remonta ao período de construção do açude.</p>
+    <p><strong>Local:</strong> <span id="det-local">Av. José de Freitas Queiroz, Cedro</span></p>
+    <p><strong>Status:</strong> <span id="det-status">Em análise</span></p>
+    <p><strong>Responsável:</strong> <span id="det-responsavel">Dnocs</span></p>
+    <p><strong>Confirmações:</strong> <span id="det-confirmacoes">12 moradores</span></p>
+    <button>Confirmar ocorrência</button>
+  </div>
+</aside>
     
     <div id="mapa-container" onclick="registrarOcorrencia(event)">
-      <img src="../assets/map.png" alt="Mapa de Quixadá">
+      <img src="../assets/mapa03.png" alt="Mapa de Quixadá">
+    </div>
+
     </div>
   </main>
 
