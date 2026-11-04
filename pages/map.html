@@ -8,44 +8,52 @@
 </head>
 <body>
 
- <nav>
-    <div class="nav-botoes">
+  <!-- Navbar centralizada baseada na nova imagem -->
+  <nav>
+    <div class="nav-centro">
       <a href="home.html"><button>Início</button></a>
-      <a href="map.html"><button class="ativo">Mapa</button></a>
+      <a href="map.html"><button class="btn-ativo">Mapa</button></a>
       <a href="about.html"><button>Sobre</button></a>
     </div>
     <a href="login.html" class="btn-login-nav"><button>Login</button></a>
   </nav>
 
-  <main class="conteudo-pagina">
-    <h2>Marque a ocorrência no mapa ou digite o endereço</h2>
-
-    <div class="barra-pesquisa">
-      <input type ="text" id="campo-endereco" placeholder="Ex: Av.José de Freitas Queiroz, Cedro">
-      <button id="btn-buscar" onclick="buscarEndereco()">Buscar</button>
-    </div>
+  <main class="conteudo-mapa">
+    <h2 class="titulo-principal">Marque a ocorrência no mapa ou digite o endereço</h2>
     
-    <div class="area-mapa">
-  <aside id="painel-detalhes">
-  <h3>Detalhes da ocorrência</h3>
-
-  <div id="detalhes-conteudo">
-    <h4 id="det-titulo">Arco histórico destruído</h4>
-    <p id="det-descricao">Um caminhão com caçamba atingiu e derrubou o arco histórico de acesso ao Açude Cedro. Ninguém ficou ferido. A estrutura remonta ao período de construção do açude.</p>
-    <p><strong>Local:</strong> <span id="det-local">Av. José de Freitas Queiroz, Cedro</span></p>
-    <p><strong>Status:</strong> <span id="det-status">Em análise</span></p>
-    <p><strong>Responsável:</strong> <span id="det-responsavel">Dnocs</span></p>
-    <p><strong>Confirmações:</strong> <span id="det-confirmacoes">12 moradores</span></p>
-    <button>Confirmar ocorrência</button>
-  </div>
-</aside>
-    
-    <div id="mapa-container" onclick="registrarOcorrencia(event)">
-      <img src="../assets/mapa03.png" alt="Mapa de Quixadá">
+    <!-- BARRA DE BUSCA SOLTA NO TOPO (Continua alinhada com o mapa!) -->
+    <div class="busca-container">
+      <input type="text" placeholder="Ex: Av.José de Freitas Queiroz, Cedro">
+      <button class="btn-buscar">Buscar</button>
     </div>
 
+    <!-- LAYOUT EM GRID PARA O MAPA E TEXTO -->
+    <div class="layout-principal">
+      
+      <!-- 1. Coluna Esquerda -->
+      <aside class="detalhes-ocorrencia">
+        <h3>Detalhes da ocorrência</h3>
+        <h4>Arco histórico destruído</h4>
+        <p class="descricao">
+          Um caminhão com caçamba atingiu e derrubou o arco histórico de acesso ao Açude Cedro. Ninguém ficou ferido. A estrutura remonta ao período de construção do açude.
+        </p>
+        <div class="infos-lista">
+          <p><strong>Local:</strong> Av. José de Freitas Queiroz, Cedro</p>
+          <p><strong>Status:</strong> Em análise</p>
+          <p><strong>Responsável:</strong> Dnocs</p>
+        </div>
+      </aside>
+
+      <!-- 2. Coluna Central (Apenas o mapa) -->
+      <div id="mapa-container" onclick="registrarOcorrencia(event)">
+        <img src="../assets/map.png" alt="Mapa de Quixadá">
+      </div>
+
+      <!-- 3. Coluna Direita (O contrapeso) -->
+      <div class="espacador-direito"></div>
+
     </div>
-  </main>
+  </main>>
 
   <script src="../scripts/map.js"></script>
 
