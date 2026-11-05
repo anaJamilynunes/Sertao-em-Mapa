@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertão em Mapa - Registrar </title>
+    <link rel = "stylesheet" href="../style.css">
+    
+</head>
+<body>
+    <div class="cadastro"> 
+    <h2> Cadastre-se </h2>
+    <p> Preencha os dados abaixo </p>
+    
+    <form class = "formulario">
+        <div class="inputs-container">
+            <div class="input-nome">
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="input-email">
+                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="input-senha">
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+            </div>
+
+            <div class = "input-confirme-senha">
+                <input type = "password" id = "confirmar-senha" placeholder="Confirme a senha" required>
+            </div>
+
+            <button type = "button" class = "btn-cadastro" onclick="window.location.href='home.html'"> Cadastre-se </button>
+        </div>
+
+        <p> Já tem uma conta? 
+            <a href="login.html" class="entre-aqui"> Entre aqui! </a>
+         </p>
+    </form>
+ </div>    
+
+</body>
+</html>
