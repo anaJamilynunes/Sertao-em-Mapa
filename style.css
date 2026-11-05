@@ -268,7 +268,7 @@ button.ativo {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  max-width: 750px; /* Mesma largura do mapa para ficarem alinhados */
+  max-width: 750px; 
   width: 100%;
 }
 
@@ -294,9 +294,8 @@ button.ativo {
 
 .layout-principal {
   display: grid;
-  /* Cria 3 faixas: 1 espaço elástico (1fr), o mapa exato (750px), 1 espaço elástico (1fr) */
-  grid-template-columns: minmax(0, 320px) minmax(0, 750px) minmax(0, 1fr); 
-  align-items: center; /* Centraliza o texto e o mapa VERTICALMENTE com perfeição */
+  grid-template-columns: 1fr 750px 1fr;
+  align-items: center;
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
