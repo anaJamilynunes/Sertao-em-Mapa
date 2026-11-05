@@ -164,8 +164,9 @@ button.ativo {
 .decoracao-cacto-direito {
   position: fixed;
   bottom: -20px;       
-  right: -5px;         
-  width: 250px;        
+  right: 0;         
+  width: 90%; 
+  max-width: 250px;       
   z-index: -1;
   pointer-events: none;
   mix-blend-mode: multiply;
@@ -174,9 +175,10 @@ button.ativo {
 
 .decoracao-sol {
   position: fixed;
-  bottom: 260px;       
+  bottom: 230px;       
   right: 220px;        
-  width: 180px;        
+  width: 90%;
+  max-width: 180px;        
   z-index: -1;
   pointer-events: none;
   mix-blend-mode: multiply;
@@ -293,7 +295,7 @@ button.ativo {
 .layout-principal {
   display: grid;
   /* Cria 3 faixas: 1 espaço elástico (1fr), o mapa exato (750px), 1 espaço elástico (1fr) */
-  grid-template-columns: 1fr 750px 1fr; 
+  grid-template-columns: minmax(0, 320px) minmax(0, 750px) minmax(0, 1fr); 
   align-items: center; /* Centraliza o texto e o mapa VERTICALMENTE com perfeição */
   width: 100%;
   max-width: 1600px;
@@ -301,21 +303,25 @@ button.ativo {
 }
 
 .detalhes-ocorrencia {
-  justify-self: center; /* Este é o segredo para o gap ficar perfeitamente igual dos dois lados do texto! */
+  justify-self: center; 
   width: 100%;
+  height: 100%;
   max-width: 320px; 
-  text-align: left;
+  text-align: justify;
   color: #333;
+  flex-wrap: wrap;
+  margin-right: 1rem;
+  margin-top: 0%;
 }
 
-.detalhes-ocorrencia h3 { font-size: 22px; margin-top: 0; margin-bottom: 25px; color: #2c3e50; }
+.detalhes-ocorrencia h3 { font-size: 22px; margin-top: 0%; margin-bottom: 25px; color: #2c3e50; }
 .detalhes-ocorrencia h4 { font-size: 18px; margin-bottom: 15px; }
 .detalhes-ocorrencia .descricao { font-size: 15px; line-height: 1.6; margin-bottom: 25px; color: #555; }
 .detalhes-ocorrencia p { margin: 12px 0; font-size: 15px; }
 
 #mapa-container { 
   width: 100%;
-  height: 500px; 
+  height: clamp(280px, 40vw, 500px); 
   position: relative;
   overflow: hidden; 
   border: 5px solid #2c3e50; 

@@ -1,6 +1,6 @@
 # SERTÃO EM MAPA
 
-1. O PROBLEMA E O PÚBLICO-ALVO:
+## 1. O PROBLEMA E O PÚBLICO-ALVO:
 
 A população do município de Quixadá enfrenta severos transtornos decorrentes do
 declínio da infraestrutura urbana, evidenciados por alagamentos recorrentes, vias
@@ -8,7 +8,7 @@ danificadas, descarte irregular de resíduos e deficiência na iluminação púb
 situação é agravada pela ausência de um canal oficial e acessível de comunicação, o que
 impossibilita o direcionamento eficaz das demandas comunitárias aos órgãos competentes.
 
-2. O PROJETO E SEU OBJETIVO:
+## 2. O PROJETO E SEU OBJETIVO:
 
 Diante dessa lacuna, o projeto Sertão em Mapa propõe o desenvolvimento de uma
 plataforma web geolocalizada destinada ao registro e centralização de denúncias cidadãs.
@@ -16,7 +16,7 @@ O sistema visa organizar e conferir celeridade ao envio desses dados às autorid
 responsáveis, evidenciando a insatisfação popular e mobilizando a gestão pública contra a
 inércia perante os problemas.
 
-3. CONTATO COM A COMUNIDADE:
+## 3. CONTATO COM A COMUNIDADE:
 
 Foram realizadas entrevistas com variáveis públicos residentes em Quixadá, entre
 as perguntas haviam:
@@ -24,35 +24,34 @@ as perguntas haviam:
     ● Como esse problema te afeta?
     ● Com qual frequência esses problemas ocorrem na sua região?
 
-Link do documento com todas as perguntas referentes a entrevista: https://docs.google.com/document/d/1yA0aszbiiK6D1xH92WJ9Fkxm_trcFlz4o7b_TJbDx98/edit?usp=drive_link
-Link do formulário criado com algumas perguntas: https://docs.google.com/forms/d/e/1FAIpQLSerCcTgarWp8YWpYhplpcjB3TeU4A98qId76UzrIl_oeK4WIA/viewform?usp=header
+Link do documento com todas as perguntas referentes a entrevista: 
+[https://docs.google.com/document/d/1yA0aszbiiK6D1xH92WJ9Fkxm_trcFlz4o7b_TJbDx98/edit?usp=drive_link](URL)
 
-- Também foram realizadas perguntas acerca da plataforma, elas consistiam em:
+Link do formulário criado com algumas perguntas: 
+[https://docs.google.com/forms/d/e/1FAIpQLSerCcTgarWp8YWpYhplpcjB3TeU4A98qId76UzrIl_oeK4WIA/viewform?usp=header](URL)
+
+Também foram realizadas perguntas acerca da plataforma, elas consistiam em:
     ● Se existisse um aplicativo/plataforma nacional ou regional onde você pudesse
 apontar no mapa o problema da sua rua, anexar foto e ver se outros vizinhos
 relataram o mesmo problema, você usaria?
     ● Que funcionalidades fariam você usar a plataforma?
 
-- Diante dessas perguntas, concluiu-se que o projeto teria ênfase na comunicação da
-população em denunciar esses problemas.
+Diante dessas perguntas, concluiu-se que o projeto teria ênfase na comunicação da população em denunciar esses problemas.
 
-4. REQUISITOS FUNCIONAIS (RF):
+## 4. REQUISITOS FUNCIONAIS (RF):
 
 - 1. RF01 - Cadastro e Autenticação de Usuários: O sistema deve permitir que novos
 usuários (moradores) se cadastrem informando e-mail e senha, além de realizar o
 login/logout na plataforma.
-- 2. RF02 - Registro de Ocorrências: O usuário deve poder registrar uma nova
-ocorrência urbana (ex: lixo acumulado, alagamento, obra parada, poste caído)
+- 2. RF02 - Registro de Ocorrências: Permite que o usuário ajude a mapear problemas urbanos
+por meio de ocorrências na plataforma de forma anônima, informando categoria, descrição textual, anexando foto e capturando a
+geolocalização. Ex. de ocorrências: área de lixo acumulado, área perigosa, etc.
 - 3. RF03 - Visualização Territorial e Mapas Interativos: O sistema deve exibir um mapa
 interativo com os limites dos bairros de Quixadá e as ocorrências geolocalizadas.
 - 4. RF04 - Camadas de Mapas Sobrepostas: O sistema deve permitir que o usuário
 sobreponha diferentes camadas no mapa (ex: densidade demográfica, áreas de
-risco de alagamento) para cruzamento de dados.
-- 5. Cadastro de ocorrência: Permite que o usuário ajude a mapear problemas urbanos
-por meio de ocorrências na plataforma de forma anônima. Ex: área de lixo
-acumulado, área perigosa, etc.
-informando categoria, descrição textual, anexando foto e capturando a
-geolocalização.
+risco de alagamento) para cruzamento de dados. 
+
 
 5. BENEFÍCIOS DA APLICAÇÃO:
 
